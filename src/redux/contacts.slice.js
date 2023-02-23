@@ -40,7 +40,7 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action)=> {
         state.isLoading = false;
         state.error = null;
-        const index = state.items.findIndex(task => task.id === action.payload);
+        const index = state.items.findIndex(task => task.id === action.payload.id);
         state.items.splice(index, 1);
       })
       .addCase(deleteContact.rejected, handleRejected)
